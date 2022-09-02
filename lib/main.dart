@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:getskills_flutter/common_widgets/form_submit_button.dart';
 import 'package:getskills_flutter/sign_in/sign_in_button.dart';
 
+import 'home_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -104,12 +106,25 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeScreen(),
+                  ),
+                );
+              },
+              child: Text('To the home screen'),
+            ),
           ],
         ),
       ),
-        floatingActionButton: SignInButton(
+      floatingActionButton: SignInButton(
         text: 'Show maths tests',
-        onPressed: _incrementCounter, textColor: Color.alphaBlend(Colors.black, Colors.white10), color: Colors.green,
+        onPressed: _incrementCounter,
+        textColor: Color.alphaBlend(Colors.black, Colors.white10),
+        color: Colors.green,
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
