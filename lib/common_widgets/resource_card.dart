@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
 
 class ResourceCard extends StatelessWidget {
-  const ResourceCard({Key? key}) : super(key: key);
+  final String title;
+  final String subtitle;
+  final String imageUrl;
+  const ResourceCard(
+      {Key? key,
+      required this.title,
+      required this.subtitle,
+      required this.imageUrl})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(right: 20),
-      width: 200,
+      width: 230,
       child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Title", style: TextStyle(fontSize: 20)),
-            Text("Description"),
-            SizedBox(height: 10),
+            Text(title, style: TextStyle(fontSize: 20)),
+            SizedBox(height: 5),
+            Text(title),
             Image(
-              image: NetworkImage(
-                  "https://avatars3.githubusercontent.com/u/17098477?s=460&v=4"),
+              image: AssetImage(imageUrl),
             )
           ]),
     );

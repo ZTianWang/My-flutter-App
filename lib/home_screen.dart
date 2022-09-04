@@ -60,7 +60,9 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(
+              height: 30,
+            ),
             // the resource cards section
             Container(
               width: double.infinity,
@@ -71,24 +73,30 @@ class HomeScreen extends StatelessWidget {
                   const Text(
                     'Favorite',
                     style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: titleColor),
                   ),
                   const SizedBox(height: 10),
                   Container(
-                    height: 250,
+                    height: 300,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: const <Widget>[
-                        ResourceCard(),
+                        ResourceCard(
+                          title: 'Mathematic',
+                          subtitle: 'Academic',
+                          imageUrl: 'assets/images/math.png',
+                        ),
                       ],
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(
+              height: 30,
+            ),
             // the history message section
             Container(
               width: double.infinity,
@@ -101,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                       child: Text(
                         'History',
                         style: TextStyle(
-                            fontSize: 22,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: titleColor),
                       ),
@@ -123,7 +131,7 @@ class HomeScreen extends StatelessWidget {
                         image: NetworkImage(
                             'https://avatars3.githubusercontent.com/u/17098477?s=460&v=4'),
                       ),
-                      SizedBox(width: 20),
+                      SizedBox(width: 25),
                       Expanded(
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -131,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                               Text(
                                 'Title',
                                 style: TextStyle(
-                                  fontSize: 22,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -147,7 +155,9 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(
+              height: 30,
+            ),
             // the more resources section
             Container(
               width: double.infinity,
@@ -158,24 +168,35 @@ class HomeScreen extends StatelessWidget {
                   Text(
                     'More',
                     style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: titleColor),
                   ),
                   SizedBox(height: 10),
                   Container(
-                    height: 250,
+                    height: 300,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
-                        ResourceCard(),
+                        ResourceCard(
+                          title: 'History',
+                          subtitle: 'Academic',
+                          imageUrl: 'assets/images/history.png',
+                        ),
+                        ResourceCard(
+                          title: 'English',
+                          subtitle: 'Academic',
+                          imageUrl: 'assets/images/english.png',
+                        ),
                       ],
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(
+              height: 30,
+            ),
           ],
         ),
       ),
