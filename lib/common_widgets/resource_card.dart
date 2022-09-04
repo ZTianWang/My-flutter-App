@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getskills_flutter/utils/global.dart';
 
 class ResourceCard extends StatelessWidget {
   final String title;
@@ -17,16 +18,23 @@ class ResourceCard extends StatelessWidget {
       padding: const EdgeInsets.only(right: 20),
       width: 230,
       child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title, style: TextStyle(fontSize: 20)),
-            SizedBox(height: 5),
-            Text(title),
-            Image(
-              image: AssetImage(imageUrl),
-            )
-          ]),
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 5),
+          Text(
+            subtitle,
+            style: const TextStyle(color: titleColor),
+          ),
+          Image(
+            image: AssetImage(imageUrl),
+          )
+        ],
+      ),
     );
   }
 }

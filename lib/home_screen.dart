@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:getskills_flutter/common_widgets/resource_card.dart';
-import 'package:getskills_flutter/utils/global.dart';
+import 'common_widgets/resource_card.dart';
+import 'common_widgets/message_card.dart';
+import 'utils/global.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
             // the header section
             Container(
               width: double.infinity,
-              decoration: new BoxDecoration(
+              decoration: const BoxDecoration(
                 color: headerBackgroundColor,
               ),
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
@@ -26,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                     children: const <Widget>[
                       CircleAvatar(
                         backgroundImage: NetworkImage(
-                            'https://avatars3.githubusercontent.com/u/17098477?s=460&v=4'),
+                            'https://images.unsplash.com/photo-1629467057571-42d22d8f0cbd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=698&q=80'),
                         radius: 15,
                       ),
                       SizedBox(width: 10),
@@ -61,7 +62,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             // the resource cards section
             Container(
@@ -95,7 +96,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             // the history message section
             Container(
@@ -104,59 +105,55 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                    Expanded(
-                      child: Text(
-                        'History',
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: titleColor),
-                      ),
-                    ),
-                    Text(
-                      'View all',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ]),
-                  SizedBox(height: 10),
-                  Container(
-                    child: Row(children: [
-                      Image(
-                        width: 40,
-                        height: 40,
-                        image: NetworkImage(
-                            'https://avatars3.githubusercontent.com/u/17098477?s=460&v=4'),
-                      ),
-                      SizedBox(width: 25),
-                      Expanded(
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Title',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                'Description',
-                                style:
-                                    TextStyle(fontSize: 16, color: Colors.grey),
-                              ),
-                            ]),
-                      ),
-                    ]),
-                  )
+                  Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        Expanded(
+                          child: Text(
+                            'History',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: titleColor),
+                          ),
+                        ),
+                        Text(
+                          'View all',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ]),
+                  const SizedBox(height: 10),
+                  const MessageCard(
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+                    title: 'Connor',
+                    message:
+                        'What kind of music do you like and what app do you use? ',
+                    time: '7:11 PM',
+                  ),
+                  const MessageCard(
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80',
+                    title: 'Laura Levy',
+                    message: 'Hi Tina. How\'s your night going?',
+                    time: '5:28 PM',
+                  ),
+                  const MessageCard(
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1628890923662-2cb23c2e0cfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                    title: 'Ellen Lambert',
+                    message:
+                        'Cool!😊 let\'s meet at 16:00 near the shopping mall',
+                    time: '7:11 PM',
+                  ),
                 ],
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             // the more resources section
             Container(
@@ -165,19 +162,19 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'More',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: titleColor),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Container(
                     height: 300,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
-                      children: <Widget>[
+                      children: const <Widget>[
                         ResourceCard(
                           title: 'History',
                           subtitle: 'Academic',
@@ -195,7 +192,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
           ],
         ),
