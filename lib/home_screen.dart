@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'common_widgets/resource_card.dart';
+import 'common_widgets/header.dart';
 import 'common_widgets/message_card.dart';
+import 'common_widgets/resource_card.dart';
 import 'utils/global.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,53 +15,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             // the header section
-            Container(
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                color: headerBackgroundColor,
-              ),
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Row(
-                    children: const <Widget>[
-                      CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            'https://images.unsplash.com/photo-1629467057571-42d22d8f0cbd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=698&q=80'),
-                        radius: 15,
-                      ),
-                      SizedBox(width: 10),
-                      Text(
-                        'Welcome back to GetSkills',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  const SizedBox(
-                    width: 200,
-                    child: LinearProgressIndicator(
-                      value: 0.8,
-                      backgroundColor: indicatorBackgroundColor,
-                      valueColor: AlwaysStoppedAnimation<Color>(indicatorColor),
-                      minHeight: 10,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  const Text(
-                    'Exp: ???/114514',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            Header(),
             const SizedBox(
               height: 20,
             ),
