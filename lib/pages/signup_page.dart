@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'login_page.dart';
+import 'package:getskills_flutter/pages/login_page.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -29,6 +28,34 @@ class _SignupPageState extends State<SignupPage> {
                   fontSize: 36
                 ),
                 textAlign: TextAlign.center,
+              ),
+            ),
+
+            SizedBox(height: size.height * 0.03),
+
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.symmetric(horizontal: 40),
+              child: Text(
+                "Username",
+                style: TextStyle(
+                  fontSize: 24
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
+
+            SizedBox(height: size.height * 0.02),
+
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.symmetric(horizontal: 40),
+              child: const TextField(
+                decoration: InputDecoration(  
+                  border: OutlineInputBorder(),  
+                  labelText: 'Username',  
+                  hintText: 'Username',  
+                ),  
               ),
             ),
 
