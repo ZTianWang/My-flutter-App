@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getskills_flutter/chat_list/message_data/message_data.dart';
+import 'package:getskills_flutter/chat_list/message_data/message_page.dart';
 import '../common_widgets/call_back.dart';
 import './message_data/message_data.dart';
 import './message_data/message_item.dart';
@@ -58,6 +59,7 @@ class _ChatListPageState extends State<ChatListPage> {
             ),
             Container(
               margin: const EdgeInsets.only(left: 10, right: 10),
+              // child: MessagePage(),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -68,14 +70,7 @@ class _ChatListPageState extends State<ChatListPage> {
                   new MessageItem(messageList[4]),
                 ],
               ),
-              // child: new MessageItem(messageList[0]),
             ),
-            // ListView.builder(
-            //   itemCount: messageList.length,
-            //   itemBuilder: (BuildContext context, int index) {
-            //     return new MessageItem(messageList[index]);
-            //   },
-            // )
           ],
         ),
       ),

@@ -18,7 +18,7 @@ class MessageItem extends StatelessWidget {
         ),
       );
     }
-    return Text('');
+    return Container();
   }
 
   @override
@@ -74,7 +74,7 @@ class MessageItem extends StatelessWidget {
                       formatDate(message.time, [hh, ":", nn, am]),
                       style: TextStyle(fontSize: 14, color: Color(0xffa9a9a9)),
                     ),
-                    Padding(padding: const EdgeInsets.only(top: 5)),
+                    Padding(padding: const EdgeInsets.only(top: 3)),
                     _showNewNum(),
                     // Text(
                     //   message.newNum.toString(),
