@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
-import 'message_data.dart';
-import 'package:date_format/date_format.dart';
-import '../../common_widgets/call_back.dart';
 
-class MessageItem extends StatelessWidget {
-  final MessageData message;
-  MessageItem(this.message);
-
-  _showNewNum() {
-    if (message.newNum > 0) {
-      return Text(
-        message.newNum.toString(),
-        style: const TextStyle(
-          fontSize: 17,
-          fontWeight: FontWeight.w100,
-          color: Colors.lightBlue,
-        ),
-      );
-    }
-    return Container();
-  }
+class MessageCard extends StatelessWidget {
+  final String title;
+  final String message;
+  final String imageUrl;
+  final String time;
+  const MessageCard(
+      {Key? key,
+      required this.title,
+      required this.message,
+      required this.imageUrl,
+      required this.time})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +23,7 @@ class MessageItem extends StatelessWidget {
           child: Image(
             width: 55,
             height: 55,
-            image: NetworkImage(message.avatar),
+            image: NetworkImage(imageUrl),
             fit: BoxFit.cover,
           ),
         ),
@@ -42,14 +34,14 @@ class MessageItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  message.title,
+                  title,
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  message.contant,
+                  message,
                   style: const TextStyle(fontSize: 16, color: Colors.grey),
                   maxLines: 2,
                 ),
@@ -58,14 +50,7 @@ class MessageItem extends StatelessWidget {
         const SizedBox(
           width: 10,
         ),
-        Column(
-          children: [
-            Text(formatDate(message.time, [hh, ":", nn, am]),
-                style: const TextStyle(color: Colors.grey)),
-            const Padding(padding: EdgeInsets.only(top: 5)),
-            _showNewNum(),
-          ],
-        ),
+        Text(time, style: const TextStyle(color: Colors.grey)),
       ]),
     );
   }
