@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:getskills_flutter/common_widgets/form_submit_button.dart';
 import 'package:getskills_flutter/sign_in/sign_in_button.dart';
+import 'pages/login_page.dart';
+import 'pages/signup_page.dart';
+import 'package:getskills_flutter/pages/chat.dart';
+
+import 'home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -26,7 +32,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'Welcome to GetSkills'),
+      // home: const MyHomePage(title: 'Welcome to GetSkills'),
+      home: const SignupPage(),
     );
   }
 }
@@ -104,12 +111,25 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeScreen(),
+                  ),
+                );
+              },
+              child: Text('To the home screen'),
+            ),
           ],
         ),
       ),
-        floatingActionButton: SignInButton(
+      floatingActionButton: SignInButton(
         text: 'Show maths tests',
-        onPressed: _incrementCounter, textColor: Color.alphaBlend(Colors.black, Colors.white10), color: Colors.green,
+        onPressed: _incrementCounter,
+        textColor: Color.alphaBlend(Colors.black, Colors.white10),
+        color: Colors.green,
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
