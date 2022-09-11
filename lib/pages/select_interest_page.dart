@@ -91,7 +91,7 @@ class _SelectInterestPageState extends State<SelectInterestPage> {
                       color: Colors.blue[600],
                     ),
                   ),
-            //     )),
+                )),
           ],
         ),
       ),
