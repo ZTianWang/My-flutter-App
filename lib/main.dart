@@ -28,12 +28,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      // home: const MyHomePage(title: 'Welcome to GetSkills'),
-
       home:
-          // const ChatListPage(),
-          // const HomeScreen(),
-          const AdvisorChatListPage(),
+          // const MyHomePage(title: 'Welcome to GetSkills'),
+          const LoginPage(),
+      // const HomeScreen(),
+      // AdvisorDetail(),
+      // const ChatListPage(),
+      // const AdvisorChatListPage(),
+      // const ChatPage(),
     );
   }
 }

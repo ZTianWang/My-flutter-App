@@ -36,8 +36,7 @@ class AdvisorChatListPage extends StatelessWidget {
           Expanded(
             child: Container(
               margin: const EdgeInsets.only(top: 10.0, left: 15.0, right: 15.0),
-              height: 400.0,
-              child: const MessageList(),
+              child: MessageList(),
             ),
           ),
         ],
