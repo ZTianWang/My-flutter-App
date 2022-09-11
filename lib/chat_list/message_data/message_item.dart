@@ -9,12 +9,23 @@ class MessageItem extends StatelessWidget {
 
   _showNewNum() {
     if (message.newNum > 0) {
-      return Text(
-        message.newNum.toString(),
-        style: const TextStyle(
-          fontSize: 17,
-          fontWeight: FontWeight.w100,
-          color: Colors.lightBlue,
+      return Padding(
+        padding: const EdgeInsets.only(top: 5),
+        child: Container(
+          height: 20,
+          width: 20,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(7.0), color: Colors.red),
+          child: Center(
+            child: Text(
+              message.newNum.toString(),
+              style: const TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w100,
+                color: Colors.white,
+              ),
+            ),
+          ),
         ),
       );
     }

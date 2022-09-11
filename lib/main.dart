@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getskills_flutter/chat_list/chat_list_page.dart';
+import 'package:getskills_flutter/chat_list/chat_list_page_advisor.dart';
 import 'package:getskills_flutter/chat_list/message_data/message_list.dart';
 import 'package:getskills_flutter/common_widgets/form_submit_button.dart';
 import 'package:getskills_flutter/sign_in/sign_in_button.dart';
@@ -24,9 +25,10 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Welcome to GetSkills'),
 
-      home: const ChatListPage(),
-      // const HomeScreen(),
-      // const MessagePage(),
+      home:
+          // const ChatListPage(),
+          // const HomeScreen(),
+          const AdvisorChatListPage(),
     );
   }
 }
