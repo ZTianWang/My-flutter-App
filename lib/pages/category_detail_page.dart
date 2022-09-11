@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import '../common_widgets/call_back.dart';
 
-class AdvisorDetail extends StatefulWidget {
-  AdvisorDetail({Key? key}) : super(key: key);
+class CategoryDetailPage extends StatefulWidget {
+  CategoryDetailPage({Key? key}) : super(key: key);
 
   @override
-  State<AdvisorDetail> createState() => _AdvisorDetailState();
+  State<CategoryDetailPage> createState() => _CategoryDetailPageState();
 }
 
-class _AdvisorDetailState extends State<AdvisorDetail> {
+class _CategoryDetailPageState extends State<CategoryDetailPage> {
   String msg =
       "imagesFhq8ZBovldOlIz1-ga5QmR2imagesFhq8ZBovldOlIz1ga5QmR2imagesFhq8ZBovldOlIz1ga5QmR2imagesFhq8ZBovldOlIz1ga5QmR2imagesFhq8ZBovldOlIz1-ga5QmR2imagesFhq8ZBovldOlIz1-ga5QmR2imagesFhq8ZBovldOlIz1-ga5QmR2imagesFhq8ZBovldOlIz1-ga5QmR2imagesFhq8ZBovldOlIz1-ga5QmR2";
   @override
@@ -15,6 +16,21 @@ class _AdvisorDetailState extends State<AdvisorDetail> {
     return Scaffold(
       body: Column(
         children: [
+          TouchCallBack(
+            isfeed: false,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              alignment: Alignment.centerLeft,
+              height: 30.0,
+              margin: const EdgeInsets.only(top: 5.0, left: 12.0),
+              child: const Icon(
+                Icons.chevron_left,
+                color: Colors.black,
+              ),
+            ),
+          ),
           Container(
             color: Colors.blue,
             padding: EdgeInsets.symmetric(horizontal: 16.0),
