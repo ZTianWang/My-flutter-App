@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:getskills_flutter/common_widgets/form_submit_button.dart';
 import 'package:getskills_flutter/sign_in/sign_in_button.dart';
+import 'package:getskills_flutter/pages/chat.dart';
 
 import 'home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runApp(
+    const MaterialApp(
+      home: ChatPage(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
