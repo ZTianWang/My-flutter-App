@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getskills_flutter/pages/login_page.dart';
+import 'package:getskills_flutter/pages/select_interest_page.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -139,13 +140,25 @@ class _SignupPageState extends State<SignupPage> {
                     )
                   ),
                   padding: const EdgeInsets.all(0),
-                  child: Text(
-                    "Continue",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold
+                  // child: Text(
+                  //   "Continue",
+                  //   textAlign: TextAlign.center,
+                  //   style: TextStyle(
+                  //     fontWeight: FontWeight.bold
+                  //   ),
+                  // ),
+                  child: GestureDetector(
+                    onTap: () => {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SelectInterestPage()))
+                    },
+                    child: Text(
+                      "Continue",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
                     ),
-                  ),
+                  )
                 ),
               ),
             ),

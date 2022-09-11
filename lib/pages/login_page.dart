@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getskills_flutter/pages/signup_page.dart';
+import 'package:getskills_flutter/home_screen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -111,13 +112,25 @@ class _LoginPageState extends State<LoginPage> {
                     )
                   ),
                   padding: const EdgeInsets.all(0),
-                  child: Text(
-                    "Continue",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold
+                  // child: Text(
+                  //   "Continue",
+                  //   textAlign: TextAlign.center,
+                  //   style: TextStyle(
+                  //     fontWeight: FontWeight.bold
+                  //   ),
+                  // ),
+                  child: GestureDetector(
+                    onTap: () => {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()))
+                    },
+                    child: Text(
+                      "Continue",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
                     ),
                   ),
+                  )
                 ),
               ),
             ),
