@@ -31,9 +31,9 @@ class MyApp extends StatelessWidget {
       // home: const MyHomePage(title: 'Welcome to GetSkills'),
 
       home:
-          // const ChatListPage(),
           // const HomeScreen(),
-          const AdvisorChatListPage(),
+          const ChatListPage(),
+      // const AdvisorChatListPage(),
     );
   }
 }

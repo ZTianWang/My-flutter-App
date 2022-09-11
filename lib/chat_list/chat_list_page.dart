@@ -33,7 +33,7 @@ class ChatListPage extends StatelessWidget {
               Container(
                 alignment: Alignment.centerLeft,
                 height: 25,
-                margin: const EdgeInsets.only(left: 38, bottom: 8),
+                margin: const EdgeInsets.only(left: 30, bottom: 8),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
@@ -50,10 +50,11 @@ class ChatListPage extends StatelessWidget {
               ),
             ],
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 10.0, left: 15.0, right: 15.0),
-            height: 500.0,
-            child: MessageList(),
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.only(top: 10.0, left: 15.0, right: 15.0),
+              child: const MessageList(),
+            ),
           ),
         ],
       ),
