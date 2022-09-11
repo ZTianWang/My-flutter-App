@@ -3,6 +3,7 @@ import 'package:getskills_flutter/common_widgets/form_submit_button.dart';
 import 'package:getskills_flutter/sign_in/sign_in_button.dart';
 import 'pages/login_page.dart';
 import 'pages/signup_page.dart';
+import 'package:getskills_flutter/pages/chat.dart';
 
 import 'home_screen.dart';
 
