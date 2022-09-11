@@ -57,25 +57,9 @@ class _SelectInterestPageState extends State<SelectInterestPage> {
                         ),                        
                         Container(
                             margin:const EdgeInsets.symmetric(horizontal:20, vertical: 20),
-                            child: MultiSelectChipField(
-                                items: items,
-                                title: const Text("Categories"),
-                                // scroll: true,
-                                // searchable: true,
-                                headerColor: Colors.blue.withOpacity(0.5),
-                                // decoration: BoxDecoration(
-                                //     border: Border.all(color:Colors.blue[700], width: 1.8),
-                                // ),
-                                onTap: (val){  
-                                },
-                            ),
-                        ),
-                        Container(
-                            margin:const EdgeInsets.symmetric(horizontal:20, vertical: 20),
                             child: MultiSelectChipDisplay(
                                 items: items,
                                 alignment: Alignment.center,
-
                                 onTap: (value) {
                                     Category clickedCategory = value as Category;
                                     print(clickedCategory.name);
@@ -83,7 +67,6 @@ class _SelectInterestPageState extends State<SelectInterestPage> {
                                 }
                             ),
                         ),                        
-                
                         Container(
                             alignment: Alignment.center,
                             margin:const EdgeInsets.symmetric(horizontal:50, vertical: 50),
