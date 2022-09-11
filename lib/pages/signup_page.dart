@@ -65,7 +65,7 @@ class _SignupPageState extends State<SignupPage> {
               alignment: Alignment.centerLeft,
               padding: EdgeInsets.symmetric(horizontal: 40),
               child: Text(
-                "Account",
+                "Email",
                 style: TextStyle(
                   fontSize: 24
                 ),
@@ -83,6 +83,34 @@ class _SignupPageState extends State<SignupPage> {
                   border: OutlineInputBorder(),  
                   labelText: 'Email Address',  
                   hintText: 'Email Address',  
+                ),  
+              ),
+            ),
+
+            SizedBox(height: size.height * 0.03),
+
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.symmetric(horizontal: 40),
+              child: Text(
+                "Phone",
+                style: TextStyle(
+                  fontSize: 24
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
+
+            SizedBox(height: size.height * 0.02),
+
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.symmetric(horizontal: 40),
+              child: const TextField(
+                decoration: InputDecoration(  
+                  border: OutlineInputBorder(),  
+                  labelText: 'Phone Number',  
+                  hintText: 'Phone Number',  
                 ),  
               ),
             ),
