@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:getskills_flutter/chat_list/chat_list_page.dart';
+import 'package:getskills_flutter/chat_list/message_data/message_list.dart';
 import 'common_widgets/header.dart';
 import 'common_widgets/message_card.dart';
 import 'common_widgets/resource_card.dart';
@@ -60,49 +62,40 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        Expanded(
-                          child: Text(
-                            'History',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: titleColor),
-                          ),
+                  Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                    const Expanded(
+                      child: Text(
+                        'History',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: titleColor),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ChatListPage()));
+                      },
+                      child: const Text(
+                        'View all',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.blue,
                         ),
-                        Text(
-                          'View all',
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.blue,
-                          ),
-                        ),
-                      ]),
+                      ),
+                    ),
+                  ]),
                   const SizedBox(height: 10),
-                  const MessageCard(
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
-                    title: 'Connor',
-                    message:
-                        'What kind of music do you like and what app do you use? ',
-                    time: '7:11 PM',
-                  ),
-                  const MessageCard(
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80',
-                    title: 'Laura Levy',
-                    message: 'Hi Tina. How\'s your night going?',
-                    time: '5:28 PM',
-                  ),
-                  const MessageCard(
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1628890923662-2cb23c2e0cfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-                    title: 'Ellen Lambert',
-                    message:
-                        'Cool!😊 let\'s meet at 16:00 near the shopping mall',
-                    time: '7:11 PM',
+                  Container(
+                    height: 220,
+                    margin: const EdgeInsets.only(
+                        top: 10.0, left: 10.0, right: 10.0),
+                    child: MessageList(
+                      count: 3,
+                    ),
                   ),
                 ],
               ),

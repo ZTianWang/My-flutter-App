@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getskills_flutter/pages/select_interest_page.dart';
 import 'package:getskills_flutter/pages/signup_page.dart';
 import 'package:getskills_flutter/home_screen.dart';
 
@@ -107,7 +108,8 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomeScreen()))
+                                builder: (context) =>
+                                    const SelectInterestPage()))
                       },
                       child: Text(
                         "Continue",
