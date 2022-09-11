@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const SelectInterestPage()))
+                                    const HomeScreen()))
                       },
                       child: Text(
                         "Continue",
