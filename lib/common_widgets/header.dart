@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getskills_flutter/advisor_detail_page.dart';
+import 'package:getskills_flutter/pages/category_detail_page.dart';
 import 'package:getskills_flutter/utils/global.dart';
 
 class Header extends StatelessWidget {
