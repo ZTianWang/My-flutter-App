@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import '../common_widgets/call_back.dart';
 
-class AdvisorDetail extends StatefulWidget {
-  AdvisorDetail({Key? key}) : super(key: key);
+class CategoryDetailPage extends StatefulWidget {
+  CategoryDetailPage({Key? key}) : super(key: key);
 
   @override
-  State<AdvisorDetail> createState() => _AdvisorDetailState();
+  State<CategoryDetailPage> createState() => _CategoryDetailPageState();
 }
 
-class _AdvisorDetailState extends State<AdvisorDetail> {
+class _CategoryDetailPageState extends State<CategoryDetailPage> {
   String msg =
-      "imagesFhq8ZBovldOlIz1-ga5QmR2imagesFhq8ZBovldOlIz1ga5QmR2imagesFhq8ZBovldOlIz1ga5QmR2imagesFhq8ZBovldOlIz1ga5QmR2imagesFhq8ZBovldOlIz1-ga5QmR2imagesFhq8ZBovldOlIz1-ga5QmR2imagesFhq8ZBovldOlIz1-ga5QmR2imagesFhq8ZBovldOlIz1-ga5QmR2imagesFhq8ZBovldOlIz1-ga5QmR2";
+      "Mathematics are the result of mysterious powers which no one understands, and which the unconscious recognition of beauty must play an important part. Out of an infinity of designs a mathematician chooses one pattern for beauty’s sake and pulls it down to earth. — David Hilbert, German mathematician";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,14 +22,33 @@ class _AdvisorDetailState extends State<AdvisorDetail> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                TouchCallBack(
+                  isfeed: false,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    height: 30.0,
+                    margin: const EdgeInsets.only(top: 10.0, left: 5.0),
+                    child: const Icon(
+                      Icons.chevron_left,
+                      color: Colors.black,
+                      size: 30.0,
+                    ),
+                  ),
+                ),               
                 SafeArea(
                   bottom: false,
-                  child: Text(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 5.0, left: 10.0),
+                    child: Text(
                     "Math",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 28,
                         color: Colors.white),
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -38,6 +58,7 @@ class _AdvisorDetailState extends State<AdvisorDetail> {
                   children: [
                     Container(
                         width: 260,
+                        margin: const EdgeInsets.only(top: 5.0, left: 10.0),
                         child: Text(
                           msg,
                           style: TextStyle(color: Colors.white),
@@ -73,12 +94,12 @@ class _AdvisorDetailState extends State<AdvisorDetail> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("title...."),
-                          Text("sub-title...."),
+                          Text("Marston Morse"),
+                          Text("American mathematician"),
                         ],
                       ),
                     )),
-                    Text("21 July 2022")
+                    Text("Active 2 days ago")
                   ],
                 ),
                 SizedBox(
@@ -86,11 +107,49 @@ class _AdvisorDetailState extends State<AdvisorDetail> {
                 ),
                 Container(
                   margin: EdgeInsets.only(left: 50),
-                  child: Text(msg.substring(0, 100)),
+                  child: Text("Mathematics knows no races or geographic boundaries; for mathematics, the cultural world is one country.".substring(0, 100)),
                 )
               ],
             ),
-          )
+          ),
+                    Container(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                        height: 40.0,
+                        width: 40.0,
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage(
+                            "assets/avatar_two.jpg",
+                          ),
+                        )),
+                    Expanded(
+                        child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("David Hilbert"),
+                          Text("German mathematician"),
+                        ],
+                      ),
+                    )),
+                    Text("Active 5 hours ago")
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  child: Text("Mathematics allows for no hypocrisy and no vagueness."),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -103,7 +162,7 @@ class _AdvisorDetailState extends State<AdvisorDetail> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            "Our Best advices",
+            "Our Best advisors",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           Container(
@@ -131,7 +190,7 @@ class _AdvisorDetailState extends State<AdvisorDetail> {
               child: Text(
                 "Material",
                 style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    // fontWeight: FontWeight.bold,
                     fontSize: 28,
                     color: Colors.white),
               ),
@@ -140,10 +199,10 @@ class _AdvisorDetailState extends State<AdvisorDetail> {
           Expanded(
             child: Center(
               child: Text(
-                "Advice",
+                "Advisors",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 28,
+                    fontSize: 32,
                     color: Colors.white),
               ),
             ),
